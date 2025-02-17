@@ -17,7 +17,6 @@
   "homepage": "https://github.com/DennisMiranda/rock-paper-scissors-game#readme",
   "description": "",
   "dependencies": {
-    "-": "^0.0.1",
     "bootstrap": "^5.3.3"
   }
 }
