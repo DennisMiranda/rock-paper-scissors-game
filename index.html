@@ -6,12 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="bg-dark text-light text-center">
+    <nav class="navbar navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="#">Rock Paper Scissors</a>
+        </div>
+    </nav>
 
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <main class="container mt-5">
+        <h1 class="mb-4">ROCK PAPER SCISSORS</h1>
+
+        <section class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <h3>PLAYER</h3>
+                <p id="player-score" class="fs-2">0</p>
+                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
+            </div>
+            <div class="col-md-2 d-flex flex-column justify-content-center ">
+                <h3>VS</h3>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>COMPUTER</h3>
+                <p id="computer-score" class="fs-2">0</p>
+                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
+            </div>
+        </section>
+
+        <p class="mt-2">Ready? Choose your move.</p>
+
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-outline-light fs-1" id="rock">
+                <img src="assets/rock.svg" alt="Rock" width="50" height="50">
+            </button>
+            <button class="btn btn-outline-light fs-1" id="paper">
+                <img src="assets/paper.svg" alt="Paper" width="50" height="50">
+            </button>
+            <button class="btn btn-outline-light fs-1" id="scissors">
+                <img src="assets/scissors.svg" alt="Scissors" width="50" height="50">
+            </button>
+        </div>
+
+    </main>
+    <footer class="bg-secondary text-light text-center py-3 mt-3">
+        <p class="mb-0">Realizado por el Grupo-2-Nómada</p>
+    </footer>
+
+
     <script src="js/index.js"></script>
 </body>
 
