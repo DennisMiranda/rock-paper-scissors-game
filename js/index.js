@@ -7,6 +7,8 @@ let playerScore = 0;
 let computerScore = 0;
 let maxScore = 3;
 
+let player = document.getElementById('')
+
 document.getElementById('rock').addEventListener('click', () => playGame('rock'));
 document.getElementById('paper').addEventListener('click', () => playGame('paper'));
 document.getElementById('scissors').addEventListener('click', () => playGame('scissors'));
@@ -39,7 +41,7 @@ function determineWinner(playerChoice, computerChoice) {
     }
 
     if (playerScore >= maxScore) {
-        showModal('HUMAN victory!'); 
+        showModal(' victory!'); 
     }else if (computerScore >= maxScore){
         showModal('COMPUTER victory!');
     }   
