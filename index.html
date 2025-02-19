@@ -21,7 +21,7 @@
 
         <section class="row justify-content-center">
             <div class="col-md-4 text-center">
-                <h3>PLAYER</h3>
+                <h3 id="welcome-message">PLAYER</h3>
                 <p id="player-score" class="fs-2">0</p>
                 <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
             </div>
@@ -53,13 +53,13 @@
         <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-light text-dark">
-                    <div class="modal-header border-secondary">
+                    <div class="modal-header">
                         <h5 class="modal-title" id="winnerModalLabel">🎉 We have a winner! 🎉</h5>
                     </div>
                     <div class="modal-body text-center">
                         <p id="winnerMessage" class="fs-4 fw-bold"></p>
                     </div>
-                    <div class="modal-footer justify-content-center border-secondary">
+                    <div class="modal-footer justify-content-center">
                         <a href="#" id="btn-home" class="btn btn-primary">🏠 Home</a>
                         <button id="btn-reset" type="button" class="btn btn-danger" data-bs-dismiss="modal">🔄 Reset</button>
                     </div>
