@@ -9,6 +9,6 @@ body {
   justify-content: space-between;
 }
 
-#computer-image{
+#computer-image {
   transform: scaleX(-1);
 }
