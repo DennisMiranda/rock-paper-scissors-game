@@ -1,8 +1,8 @@
 
 // home //
-document.addEventListener('DOMContentLoaded', () => {
 
-    if (document.getElementById('btn-start')) {
+
+if (document.getElementById('btn-start')) {
         document.getElementById('btn-start').addEventListener('click', () => {
             const username = document.getElementById('username1').value.trim();
             const errorMessage = document.getElementById('error-message');
@@ -29,11 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             window.location.href = `../index.html?userName=${encodeURIComponent(username)}`;
         });
-    }
-});
+}
 
-
-document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
 
     const userName = params.get('userName');
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('welcome-message').textContent = 'invitado';
     }
-});
 
 const choices = ['rock', 'paper', 'scissors'];
 const playerScoreElement = document.getElementById('player-score');
