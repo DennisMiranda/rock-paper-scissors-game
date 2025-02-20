@@ -23,7 +23,7 @@
             <div class="col-md-4 text-center">
                 <h3>PLAYER</h3>
                 <p id="player-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
+                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid img-animation">
             </div>
             <div class="col-md-2 d-flex flex-column justify-content-center ">
                 <h3>VS</h3>
@@ -31,7 +31,7 @@
             <div class="col-md-4 text-center">
                 <h3>COMPUTER</h3>
                 <p id="computer-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Player choice" id="computer-image" class="img-fluid">
+                <img src="assets/rock.svg" alt="Computer choice" id="computer-image" class="img-fluid img-animation">
             </div>
         </section>
 
@@ -49,28 +49,24 @@
         </div>
     </main>
 
-        <!-- Modal -->
-        <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content bg-light text-dark">
-                    <div class="modal-header border-secondary">
-                        <h5 class="modal-title" id="winnerModalLabel">🎉 We have a winner! 🎉</h5>
-                    </div>
-                    <div class="modal-body text-center">
-                        <p id="winnerMessage" class="fs-4 fw-bold"></p>
-                    </div>
-                    <div class="modal-footer justify-content-center border-secondary">
-                        <a href="#" id="btn-home" class="btn btn-primary">🏠 Home</a>
-                        <button id="btn-reset" type="button" class="btn btn-danger" data-bs-dismiss="modal">🔄 Reset</button>
-                    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-light text-dark">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="winnerModalLabel">🎉 We have a winner! 🎉</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p id="winnerMessage" class="fs-4 fw-bold"></p>
+                </div>
+                <div class="modal-footer justify-content-center border-secondary">
+                    <a href="#" id="btn-home" class="btn btn-primary">🏠 Home</a>
+                    <button id="btn-reset" type="button" class="btn btn-danger" data-bs-dismiss="modal">🔄
+                        Reset</button>
                 </div>
             </div>
         </div>
-        
-    
-    <footer class="bg-secondary text-light text-center py-3 mt-3">
-        <p class="mb-0">Realizado por el Grupo-2-Nómada</p>
-    </footer>
+    </div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
