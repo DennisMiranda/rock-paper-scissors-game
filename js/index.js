@@ -3,32 +3,35 @@
 
 
 if (document.getElementById('btn-start')) {
-        document.getElementById('btn-start').addEventListener('click', () => {
+
+    const btnStart = document.getElementById('btn-start');
+    
+    btnStart.addEventListener('click', () => {
             const username = document.getElementById('username1').value.trim();
             const errorMessage = document.getElementById('error-message');
 
-            if (username === '') {
-                errorMessage.textContent = 'Please enter your name ';
-                errorMessage.style.display = 'inline';
-                return;
-            }
+        if (username === '') {
+            errorMessage.textContent = 'Please enter your name ';
+            errorMessage.style.display = 'inline';
+            return;
+        }
 
-            if (username.length < 3 || username.length > 10) {
-                errorMessage.textContent = 'El nombre debe tener entre 3 y 50 caracteres.';
-                errorMessage.style.display = 'inline';
-                return;
-            }
+        if (username.length < 2 || username.length > 10) {
+            errorMessage.textContent = 'El nombre debe tener entre 3 y 50 caracteres.';
+            errorMessage.style.display = 'inline';
+            return;
+        }
 
-            if (!/^[a-zA-Z\s]+$/.test(username)) {
-                errorMessage.textContent = 'El nombre solo puede contener letras y espacios.';
-                errorMessage.style.display = 'inline';
-                return;
-            }
+        if (!/^[a-zA-Z\s]+$/.test(username)) {
+            errorMessage.textContent = 'El nombre solo puede contener letras y espacios.';
+            errorMessage.style.display = 'inline';
+            return;
+        }
 
-            errorMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
 
-            window.location.href = `../index.html?userName=${encodeURIComponent(username)}`;
-        });
+        window.location.href = `../index.html?userName=${encodeURIComponent(username)}`;
+    });
 }
 
     const params = new URLSearchParams(window.location.search);
