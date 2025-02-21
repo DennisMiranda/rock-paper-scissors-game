@@ -50,7 +50,6 @@ const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
 const playerImage = document.getElementById("player-image");
 const computerImage = document.getElementById("computer-image");
-
 let playerScore = 0;
 let computerScore = 0;
 let maxScore = 3;
@@ -69,7 +68,7 @@ document
   .getElementById("btn-reset")
   .addEventListener("click", () => resetGame());
 document.getElementById("btn-home").addEventListener("click", (event) => {
-  window.location.href = "#";
+  window.location.href = "/pages/home.html";
 });
 
 function playGame(playerChoice) {
