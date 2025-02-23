@@ -4,62 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-dark text-light text-center">
-    <nav class="navbar navbar-dark bg-secondary">
-        <div class="container">
-            <a class="navbar-brand mx-auto" href="#">Rock Paper Scissors</a>
-        </div>
-    </nav>
+<body class=" text-light text-center">
 
     <main class="container mt-5">
-        <h1 class="mb-4">ROCK PAPER SCISSORS</h1>
+        <h1 class="display-1 text-uppercase mb-4">Rock <span class="spanTitle1"> Paper</span> <span class="spanTitle2">
+                Scissors</span></h1>
+        <section class="game-develop">
+            <section class="row justify-content-center">
+                <div class="col-md-4 text-center">
+                    <div class="score-card">
+                        <span id="welcome-message" class="fs-2 fw-normal text-uppercase"></span>
+                        <span id="player-score" class="fs-2 fw-normal">0</span>
+                    </div>
+                    <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid img-animation">
+                </div>
+                <div class="col-md-2 d-flex flex-column justify-content-center ">
+                    <p class="label-vs text-uppercase fw-normal fs-1">vs</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="score-card">
+                        <span class="fs-2 fw-normal text-uppercase">computer</span>
+                        <span id="computer-score" class="fs-2 fw-normal">0</span>
+                    </div>
+                    <img src="assets/rock.svg" alt="Computer choice" id="computer-image"
+                        class="inverted img-fluid img-animation">
+                </div>
+            </section>
 
-        <section class="row justify-content-center">
-            <div class="col-md-4 text-center">
-                <h3 id="welcome-message">PLAYER</h3>
-                <p id="player-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid img-animation">
-            </div>
-            <div class="col-md-2 d-flex flex-column justify-content-center ">
-                <h3>VS</h3>
-            </div>
-            <div class="col-md-4 text-center">
-                <h3>COMPUTER</h3>
-                <p id="computer-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Computer choice" id="computer-image" class="img-fluid img-animation">
+            <p class="mt-2 fs-2 text-black ">Ready? Choose your move.</p>
+            <div class="d-flex justify-content-center gap-4">
+                <div><button class="button-option button-rock btn fs-1  border-black rounded-circle border-3 p-2"
+                        id="rock">
+                        <img class="inverted" src="assets/icon-rock.svg" alt="Rock" width="50" height="50">
+                    </button>
+                    <span class="fs-4 text-black">Rock</span>
+                </div>
+                <div><button class="button-option button-paper btn fs-1 border-black rounded-circle border-3 p-2"
+                        id="paper">
+                        <img class="inverted" src="assets/icon-paper.svg" alt="Paper" width="50" height="50">
+                    </button>
+                    <span class="fs-4 text-black">Paper</span>
+                </div>
+                <div><button class="button-option button-scissors btn fs-1 border-black rounded-circle border-3 p-2"
+                        id="scissors">
+                        <img class="inverted" src="assets/icon-scissors.svg" alt="Scissors" width="50" height="50">
+                    </button>
+                    <span class="fs-4 text-black">Scissors</span>
+                </div>
+
             </div>
         </section>
-
-        <p class="mt-2">Ready? Choose your move.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <button class="btn btn-outline-light fs-1" id="rock">
-                <img src="assets/rock.svg" alt="Rock" width="50" height="50">
-            </button>
-            <button class="btn btn-outline-light fs-1" id="paper">
-                <img src="assets/paper.svg" alt="Paper" width="50" height="50">
-            </button>
-            <button class="btn btn-outline-light fs-1" id="scissors">
-                <img src="assets/scissors.svg" alt="Scissors" width="50" height="50">
-            </button>
-        </div>
     </main>
 
     <!-- Modal -->
-    <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
+    <div class="modal fade" id="winnerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="winnerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-light text-dark">
-                <div class="modal-header border-secondary">
+                <div class="modal-header">
                     <h5 class="modal-title" id="winnerModalLabel">🎉 We have a winner! 🎉</h5>
                 </div>
                 <div class="modal-body text-center">
                     <p id="winnerMessage" class="fs-4 fw-bold"></p>
                 </div>
-                <div class="modal-footer justify-content-center border-secondary">
+                <div class="modal-footer justify-content-center">
                     <a href="#" id="btn-home" class="btn btn-primary">🏠 Home</a>
                     <button id="btn-reset" type="button" class="btn btn-danger" data-bs-dismiss="modal">🔄
                         Reset</button>
@@ -67,6 +82,11 @@
             </div>
         </div>
     </div>
+
+
+    <footer class="text-black text-center py-3 mt-3">
+        <p class="mb-0">Realizado por el Grupo-2-Nómada</p>
+    </footer>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
