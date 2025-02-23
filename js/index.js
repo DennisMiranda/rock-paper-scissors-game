@@ -46,10 +46,10 @@ if (userName) {
 }
 
 const choices = ["rock", "paper", "scissors"];
+const playerImageId = "player-image";
+const computerImageId = "computer-image";
 const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
-const playerImage = document.getElementById("player-image");
-const computerImage = document.getElementById("computer-image");
 let playerScore = 0;
 let computerScore = 0;
 let maxScore = 3;
@@ -73,10 +73,14 @@ document.getElementById("btn-home").addEventListener("click", (event) => {
 
 function playGame(playerChoice) {
   const animationDuration = 1600;
-  animateImages();
+  animateImage(playerImageId, false);
+  animateImage(computerImageId, true);
   setTimeout(() => {
-    desanimateImages();
+    desanimateImage(playerImageId);
+    desanimateImage(computerImageId);
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    updateImage(playerImageId, playerChoice);
+    updateImage(computerImageId, computerChoice);
     determineWinner(playerChoice, computerChoice);
   }, animationDuration);
 }
@@ -119,37 +123,31 @@ function resetGame() {
 }
 
 //Images Animation
-function animateImages() {
-  document
-    .getElementById("player-image")
-    .animate(
-      [
-        { transform: "translateY(0)" },
-        { transform: "translateY(-30px)" },
-        { transform: "translateY(30px)" },
-        { transform: "translateY(-30px)" },
-        { transform: "translateY(30px)" },
-        { transform: "translateY(-30px)" },
-        { transform: "translateY(0)" },
-      ],
-      1600
-    );
-  document
-    .getElementById("computer-image")
-    .animate(
-      [
-        { transform: "translateY(0) scaleX(-1)" },
-        { transform: "translateY(-30px) scaleX(-1)" },
-        { transform: "translateY(30px) scaleX(-1)" },
-        { transform: "translateY(-30px) scaleX(-1)" },
-        { transform: "translateY(30px) scaleX(-1)" },
-        { transform: "translateY(-30px) scaleX(-1)" },
-        { transform: "translateY(0) scaleX(-1)" },
-      ],
-      1600
-    );
+function animateImage(id, isInverted) {
+  const duration = 1600;
+  const animation = [
+    { transform: "translateY(0)" },
+    { transform: "translateY(-30px)" },
+    { transform: "translateY(30px)" },
+    { transform: "translateY(-30px)" },
+    { transform: "translateY(30px)" },
+    { transform: "translateY(-30px)" },
+    { transform: "translateY(0)" },
+  ];
+
+  if (isInverted) {
+    animation.forEach((frame) => {
+      frame.transform = frame.transform + " scaleX(-1)";
+    });
+  }
+
+  document.getElementById(id).animate(animation, duration);
 }
-function desanimateImages() {
-  document.getElementById("player-image").style.animation = "none";
-  document.getElementById("computer-image").style.animation = "none";
+
+function desanimateImage(id) {
+  document.getElementById(id).style.animation = "none";
+}
+
+function updateImage(id, image) {
+  document.getElementById(id).src = "assets/" + image + ".svg";
 }
