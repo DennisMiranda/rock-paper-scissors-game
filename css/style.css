@@ -1,3 +1,11 @@
+:root {
+  --bg-home-color: #ffe15b;
+  --bg-btnhome-color: #ee3593;
+  --bg-title-color: #01cae6;
+  --bg-dark-yellow: #f3c611;
+  --bg-medium-yellow: #fde94e;
+}
+
 html,
 body {
   height: 100%;
@@ -7,8 +15,65 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--bg-home-color);
 }
 
-#computer-image{
+.inverted {
   transform: scaleX(-1);
+}
+
+h1 {
+  font-family: "Luckiest Guy", sans-serif;
+  color: white;
+  .spanTitle1 {
+    color: var(--bg-btnhome-color);
+  }
+  .spanTitle2 {
+    color: var(--bg-title-color);
+  }
+}
+
+.game-develop {
+  font-family: "Nerko One", sans-serif;
+}
+
+.score-card {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--bg-btnhome-color);
+  border-radius: 10px;
+}
+
+.label-vs {
+  background-color: var(--bg-dark-yellow);
+  border-radius: 10px;
+  color: black;
+}
+
+.button-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+.button-rock {
+  background-color: var(--bg-medium-yellow);
+  &:hover {
+    background-color: var(--bg-dark-yellow);
+  }
+}
+
+.button-paper {
+  background-color: #6cd0d2;
+  &:hover {
+    background-color: #0ba3b8;
+  }
+}
+.button-scissors {
+  background-color: #dfbbd9;
+  &:hover {
+    background-color: var(--bg-btnhome-color);
+  }
 }
