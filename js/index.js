@@ -48,6 +48,7 @@ if (userName) {
 const choices = ["rock", "paper", "scissors"];
 const playerImageId = "player-image";
 const computerImageId = "computer-image";
+const defaultImageId = "rock-animation";
 const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
 let playerScore = 0;
@@ -73,6 +74,10 @@ document.getElementById("btn-home").addEventListener("click", (event) => {
 
 function playGame(playerChoice) {
   const animationDuration = 1600;
+  // Reset default image
+  updateImage(playerImageId, defaultImageId);
+  updateImage(computerImageId, defaultImageId);
+
   animateImage(playerImageId, false);
   animateImage(computerImageId, true);
   setTimeout(() => {
