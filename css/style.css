@@ -1,6 +1,6 @@
 :root {
   --bg-home-color: #ffe15b;
-  --bg-btnhome-color: #ee3593;
+  --bg-btnhome-color: #E55D9D;
   --bg-title-color: #01cae6;
   --bg-dark-yellow: #f3c611;
   --bg-medium-yellow: #fde94e;
@@ -86,4 +86,26 @@ h1 {
   &:hover {
     background-color: var(--bg-btnhome-color);
   }
+}
+
+
+#btn-home {
+  background-color: #01CAE6; /* Color personalizado */
+  border-radius: 15PX;
+  color: white;
+}
+
+#btn-home:hover {
+  background-color: #0baec4;
+  border-color: #f0e228;
+}
+
+#btn-reset {
+  background-color: #D6D6D6;
+  border-radius: 15PX;
+}
+
+#btn-reset:hover {
+  background-color: #9c9696;  
+  border-color: #fff23d;
 }

@@ -1,49 +1,48 @@
 // home //
-
 if (document.getElementById("btn-start")) {
   const btnStart = document.getElementById("btn-start");
+  const usernameInput = document.getElementById("username1");
+  const errorMessage = document.getElementById("error-message");
 
-  btnStart.addEventListener("click", () => {
-    const username = document.getElementById("username1").value.trim();
-    const errorMessage = document.getElementById("error-message");
+  const validateAndRedirect = () => {
+    const username = usernameInput.value.trim();
 
     if (username === "") {
-      errorMessage.textContent = "Please enter your name ";
+      errorMessage.textContent = "Please enter your name";
       errorMessage.style.display = "inline";
       return;
     }
 
     if (username.length < 2 || username.length > 10) {
-      errorMessage.textContent =
-        "El nombre debe tener entre 3 y 50 caracteres.";
+      errorMessage.textContent = "El nombre debe tener entre 3 y 10 caracteres.";
       errorMessage.style.display = "inline";
       return;
     }
 
     if (!/^[a-zA-Z\s]+$/.test(username)) {
-      errorMessage.textContent =
-        "El nombre solo puede contener letras y espacios.";
+      errorMessage.textContent = "El nombre solo puede contener letras y espacios.";
       errorMessage.style.display = "inline";
       return;
     }
 
     errorMessage.style.display = "none";
 
-    window.location.href = `../index.html?userName=${encodeURIComponent(
-      username
-    )}`;
+    window.location.href = `../index.html?userName=${encodeURIComponent(username)}`;
+  };
+
+  btnStart.addEventListener("click", validateAndRedirect);
+
+  usernameInput.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      validateAndRedirect();
+    }
   });
 }
 
 const params = new URLSearchParams(window.location.search);
-
 const userName = params.get("userName");
+document.getElementById("welcome-message").textContent = `${userName}`;
 
-if (userName) {
-  document.getElementById("welcome-message").textContent = `${userName}`;
-} else {
-  document.getElementById("welcome-message").textContent = "invitado";
-}
 
 const choices = ["rock", "paper", "scissors"];
 const playerImageId = "player-image";
@@ -55,39 +54,47 @@ let playerScore = 0;
 let computerScore = 0;
 let maxScore = 3;
 
-document
-  .getElementById("rock")
-  .addEventListener("click", () => playGame("rock"));
-document
-  .getElementById("paper")
-  .addEventListener("click", () => playGame("paper"));
-document
-  .getElementById("scissors")
-  .addEventListener("click", () => playGame("scissors"));
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
 
-document
-  .getElementById("btn-reset")
-  .addEventListener("click", () => resetGame());
+const setButtonsState = (enabled) => {
+  rockButton.disabled = !enabled;
+  paperButton.disabled = !enabled;
+  scissorsButton.disabled = !enabled;
+};
+
+rockButton.addEventListener("click", () => playGame("rock"));
+paperButton.addEventListener("click", () => playGame("paper"));
+scissorsButton.addEventListener("click", () => playGame("scissors"));
+document.getElementById("btn-reset").addEventListener("click", () => resetGame());
 document.getElementById("btn-home").addEventListener("click", (event) => {
   window.location.href = "/pages/home.html";
 });
 
 function playGame(playerChoice) {
   const animationDuration = 1600;
-  // Reset default image
+
+  setButtonsState(false);
+
   updateImage(playerImageId, defaultImageId);
   updateImage(computerImageId, defaultImageId);
   updateText("result-message", "");
 
   animateImage(playerImageId, false);
   animateImage(computerImageId, true);
+
   setTimeout(() => {
     desanimateImage(playerImageId);
     desanimateImage(computerImageId);
+
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     updateImage(playerImageId, playerChoice);
     updateImage(computerImageId, computerChoice);
+
     determineWinner(playerChoice, computerChoice);
+
+    setButtonsState(true);
   }, animationDuration);
 }
 
@@ -111,15 +118,20 @@ function determineWinner(playerChoice, computerChoice) {
   }
 
   if (playerScore >= maxScore) {
-    showModal(" victory!");
+    showModal("¡Congratulations! You are the winner.", "/assets/trofeo alegre.webp");
   } else if (computerScore >= maxScore) {
-    showModal("COMPUTER victory!");
+    showModal("¡Game over! You are lose the game.", "/assets/Piñatriste.webp");
   }
 }
 
-function showModal(message) {
+function showModal(message, imageUrl) {
   const modal = new bootstrap.Modal(document.getElementById("winnerModal"));
-  document.getElementById("winnerMessage").textContent = message;
+  const winnerMessageElement = document.getElementById("winnerMessage");
+  const winnerImageElement = document.getElementById("winnerImage");
+
+  winnerMessageElement.textContent = message;
+  winnerImageElement.src = imageUrl;
+
   modal.show();
 }
 
@@ -130,7 +142,7 @@ function resetGame() {
   computerScoreElement.textContent = computerScore;
 }
 
-//Images Animation
+// Animación de imágenes
 function animateImage(id, isInverted) {
   const duration = 1600;
   const animation = [
@@ -176,3 +188,4 @@ function updateText(id, text) {
   const element = document.getElementById(id);
   element.innerText = text;
 }
+
