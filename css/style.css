@@ -83,3 +83,26 @@ h1 {
     background-color: var(--bg-btnhome-color);
   }
 }
+
+
+#btn-home {
+  background-color: #13be0d; /* Color personalizado */
+  border-color: #f0e228;
+  color: white;
+}
+
+#btn-home:hover {
+  background-color: #0c8d07;
+  border-color: #f0e228;
+}
+
+#btn-reset {
+  background-color: #ff4a3d;
+  border-color: #fff23d;
+  color: white;
+}
+
+#btn-reset:hover {
+  background-color: #da3f3f;  
+  border-color: #fff23d;
+}
