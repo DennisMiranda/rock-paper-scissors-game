@@ -54,19 +54,16 @@ let playerScore = 0;
 let computerScore = 0;
 let maxScore = 3;
 
-// Obtén los botones de elección
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 
-// Función para habilitar o deshabilitar los botones
 const setButtonsState = (enabled) => {
   rockButton.disabled = !enabled;
   paperButton.disabled = !enabled;
   scissorsButton.disabled = !enabled;
 };
 
-// Event listeners para los botones
 rockButton.addEventListener("click", () => playGame("rock"));
 paperButton.addEventListener("click", () => playGame("paper"));
 scissorsButton.addEventListener("click", () => playGame("scissors"));
@@ -78,17 +75,14 @@ document.getElementById("btn-home").addEventListener("click", (event) => {
 function playGame(playerChoice) {
   const animationDuration = 1600;
 
-  // Deshabilitar los botones al inicio
   setButtonsState(false);
 
-  // Iniciar animación
   updateImage(playerImageId, defaultImageId);
   updateImage(computerImageId, defaultImageId);
 
   animateImage(playerImageId, false);
   animateImage(computerImageId, true);
 
-  // Esperar a que termine la animación y evaluar el resultado
   setTimeout(() => {
     desanimateImage(playerImageId);
     desanimateImage(computerImageId);
@@ -99,7 +93,6 @@ function playGame(playerChoice) {
 
     determineWinner(playerChoice, computerChoice);
 
-    // Habilitar los botones al final
     setButtonsState(true);
   }, animationDuration);
 }
@@ -122,9 +115,9 @@ function determineWinner(playerChoice, computerChoice) {
   }
 
   if (playerScore >= maxScore) {
-    showModal("¡Felicidades! Has ganado el juego.", "/assets/trofeo alegre.webp");
+    showModal("¡Congratulations! You are the winner.", "/assets/trofeo alegre.webp");
   } else if (computerScore >= maxScore) {
-    showModal("¡Lo siento! Has perdido el juego.", "/assets/Piñatriste.webp");
+    showModal("¡Game over! You are lose the game.", "/assets/Piñatriste.webp");
   }
 }
 
