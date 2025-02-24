@@ -42,12 +42,18 @@ h1 {
   justify-content: space-evenly;
   background-color: var(--bg-btnhome-color);
   border-radius: 10px;
+  width: 215px;
+}
+.img-choice {
+  min-height: 250px;
+  max-height: 250px;
 }
 
 .label-vs {
   background-color: var(--bg-dark-yellow);
   border-radius: 10px;
   color: black;
+  width: 100px;
 }
 
 .button-option {
