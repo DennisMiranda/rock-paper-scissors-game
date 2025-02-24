@@ -47,7 +47,7 @@ document.getElementById("welcome-message").textContent = `${userName}`;
 const choices = ["rock", "paper", "scissors"];
 const playerImageId = "player-image";
 const computerImageId = "computer-image";
-const defaultImageId = "rock-animation";
+const defaultImageId = "rock";
 const playerScoreElement = document.getElementById("player-score");
 const computerScoreElement = document.getElementById("computer-score");
 let playerScore = 0;
@@ -79,6 +79,7 @@ function playGame(playerChoice) {
 
   updateImage(playerImageId, defaultImageId);
   updateImage(computerImageId, defaultImageId);
+  updateText("result-message", "");
 
   animateImage(playerImageId, false);
   animateImage(computerImageId, true);
@@ -99,6 +100,8 @@ function playGame(playerChoice) {
 
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
+    updateText("result-message", "Draw!");
+    animateText("result-message");
     return;
   }
 
@@ -168,3 +171,21 @@ function desanimateImage(id) {
 function updateImage(id, image) {
   document.getElementById(id).src = "assets/" + image + ".svg";
 }
+
+//Result Message
+function animateText(id) {
+  const duration = 1000;
+  const animation = [
+    { opacity: 0, transform: "translateY(5px)" },
+    { opacity: 1, transform: "translateY(-30px)" },
+  ];
+  document
+    .getElementById(id)
+    .animate(animation, { duration, fill: "forwards" });
+}
+
+function updateText(id, text) {
+  const element = document.getElementById(id);
+  element.innerText = text;
+}
+
