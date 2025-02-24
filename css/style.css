@@ -56,6 +56,10 @@ h1 {
   width: 100px;
 }
 
+#result-message {
+  font-family: "Luckiest Guy", sans-serif;
+}
+
 .button-option {
   display: flex;
   flex-direction: column;

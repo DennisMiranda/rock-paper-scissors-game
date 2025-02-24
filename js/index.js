@@ -77,7 +77,7 @@ function playGame(playerChoice) {
   // Reset default image
   updateImage(playerImageId, defaultImageId);
   updateImage(computerImageId, defaultImageId);
-  hideText("result-message");
+  updateText("result-message", "");
 
   animateImage(playerImageId, false);
   animateImage(computerImageId, true);
@@ -93,6 +93,7 @@ function playGame(playerChoice) {
 
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
+    updateText("result-message", "Draw!");
     animateText("result-message");
     return;
   }
@@ -159,18 +160,19 @@ function updateImage(id, image) {
   document.getElementById(id).src = "assets/" + image + ".svg";
 }
 
-//Draw Message
+//Result Message
 function animateText(id) {
-  const duration = 1800;
+  const duration = 1000;
   const animation = [
-    { opacity: 0, transform: "translateY(30px)" },
-    { opacity: 1, transform: "translateY(0px)" },
+    { opacity: 0, transform: "translateY(5px)" },
+    { opacity: 1, transform: "translateY(-30px)" },
   ];
   document
     .getElementById(id)
     .animate(animation, { duration, fill: "forwards" });
 }
 
-function hideText(id) {
-  document.getElementById(id).style.opacity = 0;
+function updateText(id, text) {
+  const element = document.getElementById(id);
+  element.innerText = text;
 }
