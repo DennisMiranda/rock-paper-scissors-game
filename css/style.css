@@ -45,8 +45,8 @@ h1 {
   width: 215px;
 }
 .img-choice {
-  min-height: 250px;
-  max-height: 250px;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 .label-vs {
