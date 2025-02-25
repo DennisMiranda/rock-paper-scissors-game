@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--bg-home-color);
+  box-sizing: border-box;
 }
 
 .inverted {
@@ -39,10 +40,11 @@ h1 {
 
 .score-card {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: var(--bg-btnhome-color);
   border-radius: 10px;
-  width: 215px;
+  width: 220px;
+  height: 70px;
 }
 .img-choice {
   min-height: 200px;
@@ -109,3 +111,39 @@ h1 {
   background-color: #9c9696;  
   border-color: #fff23d;
 }
+
+#computer-score, #player-score{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #000000;
+}
+
+#score-animationP, #score-animationC {
+  color: green; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 0px; 
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px); 
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); 
+  }
+}
+
+

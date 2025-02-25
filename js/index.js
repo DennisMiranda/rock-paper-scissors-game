@@ -13,8 +13,8 @@ if (document.getElementById("btn-start")) {
       return;
     }
 
-    if (username.length < 2 || username.length > 10) {
-      errorMessage.textContent = "El nombre debe tener entre 3 y 10 caracteres.";
+    if (username.length < 2 || username.length > 8) {
+      errorMessage.textContent = "El nombre debe tener entre 3 y 8 caracteres.";
       errorMessage.style.display = "inline";
       return;
     }
@@ -112,9 +112,11 @@ function determineWinner(playerChoice, computerChoice) {
   ) {
     playerScore++;
     playerScoreElement.textContent = playerScore;
+    animateScoreP(); // Activa la animación del puntaje
   } else {
     computerScore++;
     computerScoreElement.textContent = computerScore;
+    animateScoreC(); // Activa la animación del puntaje
   }
 
   if (playerScore >= maxScore) {
@@ -140,6 +142,9 @@ function resetGame() {
   computerScore = 0;
   playerScoreElement.textContent = playerScore;
   computerScoreElement.textContent = computerScore;
+  updateImage(playerImageId, defaultImageId); 
+  updateImage(computerImageId, defaultImageId);
+
 }
 
 // Animación de imágenes
@@ -189,3 +194,40 @@ function updateText(id, text) {
   element.innerText = text;
 }
 
+
+
+function animateScoreP() {
+  const playerScoreAnimation = document.getElementById("score-animationP");
+
+  // Muestra el "+1"
+  playerScoreAnimation.textContent = "+1";
+  playerScoreAnimation.style.display = "block";
+
+  // Reinicia la animación
+  playerScoreAnimation.style.animation = "none";
+  void playerScoreAnimation.offsetWidth; // Truco para reiniciar la animación
+  playerScoreAnimation.style.animation = null;
+
+  // Oculta el "+1" después de la animación
+  setTimeout(() => {
+    playerScoreAnimation.style.display = "none";
+  }, 1000); // Duración de la animación (1 segundo)
+}
+
+function animateScoreC() {
+  const computerScoreAnimation = document.getElementById("score-animationC");
+
+  // Muestra el "+1"
+  computerScoreAnimation.textContent = "+1";
+  computerScoreAnimation.style.display = "block";
+
+  // Reinicia la animación
+  computerScoreAnimation.style.animation = "none";
+  void computerScoreAnimation.offsetWidth; // Truco para reiniciar la animación
+  computerScoreAnimation.style.animation = null;
+
+  // Oculta el "+1" después de la animación
+  setTimeout(() => {
+    computerScoreAnimation.style.display = "none";
+  }, 1000); // Duración de la animación (1 segundo)
+}
