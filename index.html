@@ -4,100 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock Paper & Scissor</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
-<body class=" text-light text-center">
+<body>
+    <header>
+        <h1 class="display-1 fw-bolder text-uppercase">Rock <span class="spanTitle1">- Paper</span> <span
+                class="spanTitle2"> & Scissor</span></h1>
+    </header>
+    <section>
+        <img src="/assets/rock-paper-scissor.png" alt="img-paperRockScissor">
+        <input type="text" id="username1" placeholder="Type your name">
+        <span id="error-message" style="color: red; display: none;"></span>
+        <input type="text" id="username2" placeholder="Player 2">
 
-    <main class="container mt-5">
-        <h1 class="display-1 text-uppercase mb-4">Rock <span class="spanTitle1"> Paper</span> <span class="spanTitle2">
-                Scissors</span></h1>
-        <section class="game-develop">
-            <section class="row justify-content-center">
-                <div class="d-flex flex-column align-items-center gap-5 col-md-4 text-center">
-                    <div class="score-card">
-                        <span id="welcome-message" class="fs-2 fw-normal text-uppercase"></span>
-                        <span id="player-score" class="fs-2 fw-normal">0</span>  
-                    </div>
-                        <div>
-                        <span id="score-animationP" class="score-animation"></span>
-                        </div>
-                    <img src="assets/rock.svg" alt="Player choice" id="player-image"
-                        class="img-fluid img-animation img-choice">
-                </div>
-                <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
-                    <span id="result-message" class="text-black fs-2" style="height: 30px;"></span>
-                    <p class="label-vs text-uppercase fw-normal fs-1 m-4">vs</p>
-                </div>
-                <div class="d-flex flex-column align-items-center gap-5 col-md-4 text-center">
-                    <div class="score-card">
-                        <span class="fs-2 fw-normal text-uppercase">Computer</span>
-                        <p id="computer-score" class="fs-2 fw-normal">0</p>
-                    </div>
-                    <div>
-                        <span id="score-animationC" class="score-animation"></span>
-                    </div>
+        <button id="btn-start" type="button">Start Game</button>
+        <button id="btn-vs" type="button">P1 vs P2</button>
 
-                    <img src="assets/rock.svg" alt="Computer choice" id="computer-image"
-                        class="inverted img-fluid img-animation img-choice">
-                </div>
-            </section>
+    </section>
+    <footer>Created by Group X</footer>
 
-            <p class="mt-4 fs-2 text-black ">Ready? Choose your move.</p>
-            <div class="d-flex justify-content-center gap-4">
-                <div><button class="button-option button-rock btn fs-1  border-black rounded-circle border-3 p-2"
-                        id="rock">
-                        <img class="inverted" src="assets/icon-rock.svg" alt="Rock" width="50" height="50">
-                    </button>
-                    <span class="fs-4 text-black">Rock</span>
-                </div>
-                <div><button class="button-option button-paper btn fs-1 border-black rounded-circle border-3 p-2"
-                        id="paper">
-                        <img class="inverted" src="assets/icon-paper.svg" alt="Paper" width="50" height="50">
-                    </button>
-                    <span class="fs-4 text-black">Paper</span>
-                </div>
-                <div><button class="button-option button-scissors btn fs-1 border-black rounded-circle border-3 p-2"
-                        id="scissors">
-                        <img class="inverted" src="assets/icon-scissors.svg" alt="Scissors" width="50" height="50">
-                    </button>
-                    <span class="fs-4 text-black">Scissors</span>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal fade" id="winnerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="winnerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content" style="background-color: #E55D9D;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="winnerModalLabel"></h5>
-            </div>
-            <div class="modal-body text-center">
-                <img src="" alt="Trophy" id="winnerImage" class="img-fluid mb-3" style="width: 250px;">
-                <p id="winnerMessage" class="fs-2 fw-bold"></p>
-            </div>
-            <div class="modal-footer justify-content-center gap-5">
-                <a href="#" id="btn-home" class="btn">🏠 Home</a>
-                <button id="btn-reset" type="button" class="btn" data-bs-dismiss="modal" >🔄 Reset</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <footer class="text-black text-center py-3 mt-3">
-        <p class="mb-0">Realizado por el Grupo-2-Nómada</p>
-    </footer>
-
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

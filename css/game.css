@@ -1,0 +1,124 @@
+:root {
+  --bg-home-color: #ffe15b;
+  --bg-btnhome-color: #e55d9d;
+  --bg-title-color: #01cae6;
+  --bg-dark-yellow: #f3c611;
+  --bg-medium-yellow: #fde94e;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-home-color);
+  box-sizing: border-box;
+}
+
+.inverted {
+  transform: scaleX(-1);
+}
+
+h1 {
+  font-family: "Luckiest Guy", sans-serif;
+  color: white;
+  .spanTitle1 {
+    color: var(--bg-btnhome-color);
+  }
+  .spanTitle2 {
+    color: var(--bg-title-color);
+  }
+}
+
+.game-develop {
+  font-family: "Nerko One", sans-serif;
+}
+
+.score-card {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--bg-btnhome-color);
+  border-radius: 10px;
+  width: 220px;
+  height: 70px;
+}
+.img-choice {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.label-vs {
+  background-color: var(--bg-dark-yellow);
+  border-radius: 10px;
+  color: black;
+  width: 100px;
+}
+
+#result-message {
+  font-family: "Luckiest Guy", sans-serif;
+}
+
+.button-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+.button-rock {
+  background-color: var(--bg-medium-yellow);
+  &:hover {
+    background-color: var(--bg-dark-yellow);
+  }
+}
+
+.button-paper {
+  background-color: #6cd0d2;
+  &:hover {
+    background-color: #0ba3b8;
+  }
+}
+.button-scissors {
+  background-color: #dfbbd9;
+  &:hover {
+    background-color: var(--bg-btnhome-color);
+  }
+}
+
+#btn-home {
+  background-color: #01cae6;
+  border-radius: 15px;
+  color: white;
+}
+
+#btn-home:hover {
+  background-color: #0baec4;
+  border-color: #f0e228;
+}
+
+#btn-reset {
+  background-color: #d6d6d6;
+  border-radius: 15px;
+}
+
+#btn-reset:hover {
+  background-color: #9c9696;
+  border-color: #fff23d;
+}
+
+#computer-score,
+#player-score {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #000000;
+}
