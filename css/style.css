@@ -1,149 +1,122 @@
-:root {
-  --bg-home-color: #ffe15b;
-  --bg-btnhome-color: #E55D9D;
-  --bg-title-color: #01cae6;
-  --bg-dark-yellow: #f3c611;
-  --bg-medium-yellow: #fde94e;
+:root   {
+    --bg-home-color: #FFE15B;
+    --bg-btnhome-color: #EE3593;
+    --bg-title-color:#01CAE6;
 }
 
-html,
-body {
-  height: 100%;
+html {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: var(--bg-home-color);
-  box-sizing: border-box;
+    height: 100%;
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-home-color);
+    overflow: hidden;
 }
 
-.inverted {
-  transform: scaleX(-1);
+
+#btn-vs, #username2 {
+    display: none;
 }
 
 h1 {
-  font-family: "Luckiest Guy", sans-serif;
-  color: white;
-  .spanTitle1 {
-    color: var(--bg-btnhome-color);
-  }
-  .spanTitle2 {
-    color: var(--bg-title-color);
-  }
+    padding-top: 8%;
+    padding-bottom: 0px;
+    text-align: center;
+    font-family: 'Luckiest Guy', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+
 }
 
-.game-develop {
-  font-family: "Nerko One", sans-serif;
+h1.display-1 {
+    font-size: 8em;
+    margin: 0;
+    line-height: 1.2;
+    animation: pulse 2s infinite ease-in-out; /* Animación de pulsación */
 }
 
-.score-card {
-  display: flex;
-  justify-content: space-around;
-  background-color: var(--bg-btnhome-color);
-  border-radius: 10px;
-  width: 220px;
-  height: 70px;
-}
-.img-choice {
-  min-height: 200px;
-  max-height: 200px;
-}
-
-.label-vs {
-  background-color: var(--bg-dark-yellow);
-  border-radius: 10px;
-  color: black;
-  width: 100px;
+@keyframes pulse {
+        0% {
+        transform: scale(1);
+        opacity: 1;
+        }
+        50% {
+        transform: scale(1.05); /* Ligeramente más grande */
+        opacity: 0.8; /* Ligeramente transparente */
+        }
+        100% {
+        transform: scale(1);
+        opacity: 1;
+        }
 }
 
-#result-message {
-  font-family: "Luckiest Guy", sans-serif;
+.spanTitle1 {
+        animation: colorChange1 5s infinite alternate;
+    }
+    
+    .spanTitle2 {
+        animation: colorChange2 5s infinite alternate;
+    }
+    
+    @keyframes colorChange1 {
+        0% { color: #075f29; }
+        50% { color: #339699; } /* Un verde */
+        100% { color: #48c56d; }
+    }
+    
+    @keyframes colorChange2 {
+        0% { color: #dc35ce; }
+        50% { color: #88194d; } /* Un gris */
+        100% { color:  #EE3593; }
 }
 
-.button-option {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 80px;
-}
-.button-rock {
-  background-color: var(--bg-medium-yellow);
-  &:hover {
-    background-color: var(--bg-dark-yellow);
-  }
+img {
+    width: 30%;
+    margin-bottom: 20px;
 }
 
-.button-paper {
-  background-color: #6cd0d2;
-  &:hover {
-    background-color: #0ba3b8;
-  }
+section {
+    padding-top: 0px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-.button-scissors {
-  background-color: #dfbbd9;
-  &:hover {
+
+#btn-start {
+    width: 7%;
+    height: 30px;
     background-color: var(--bg-btnhome-color);
-  }
+    color: white;
+    margin-bottom: 10%;
+    border-radius: 10px;
 }
 
-
-#btn-home {
-  background-color: #01CAE6; /* Color personalizado */
-  border-radius: 15PX;
-  color: white;
+#btn-start:hover{
+    background-color: #e60bc879;
 }
 
-#btn-home:hover {
-  background-color: #0baec4;
-  border-color: #f0e228;
+#username1  {
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+footer  {
+    text-align: center;
+    margin-bottom: 2%;
 }
 
-#btn-reset {
-  background-color: #D6D6D6;
-  border-radius: 15PX;
+.spanTitle1 {
+    color: var(--bg-btnhome-color);
 }
 
-#btn-reset:hover {
-  background-color: #9c9696;  
-  border-color: #fff23d;
+.spanTitle2 {
+    color: var(--bg-title-color);
 }
-
-#computer-score, #player-score{
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  font-weight: bold;
-  border: 2px solid #000000;
-}
-
-#score-animationP, #score-animationC {
-  color: green; 
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 0px; 
-  animation: fadeInOut 1s ease-in-out;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-10px); 
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px); 
-  }
-}
-
-
