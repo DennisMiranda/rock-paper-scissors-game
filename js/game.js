@@ -77,12 +77,12 @@ function determineWinner(playerChoice, computerChoice) {
     playerScore++;
     playerScoreElement.textContent = playerScore;
     updateText(playerScoreMessage, scoreMessage);
-    animateText(playerScoreMessage);
+    animateText(playerScoreMessage, false);
   } else {
     computerScore++;
     computerScoreElement.textContent = computerScore;
     updateText(computerScoreMessage, scoreMessage);
-    animateText(computerScoreMessage);
+    animateText(computerScoreMessage, false);
   }
 
   if (playerScore >= maxScore) {
@@ -147,12 +147,15 @@ function updateImage(id, image) {
 }
 
 // Animation Message
-function animateText(id) {
+function animateText(id, visibleEnd = true) {
   const duration = 1000;
   const animation = [
     { opacity: 0, transform: "translateY(5px)" },
     { opacity: 1, transform: "translateY(-30px)" },
   ];
+  if (!visibleEnd) {
+    animation.push({ opacity: 0, transform: "translateY(-30px)" });
+  }
   document
     .getElementById(id)
     .animate(animation, { duration, fill: "forwards" });
