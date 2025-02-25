@@ -94,6 +94,7 @@ h1 {
 #btn-home {
   background-color: #01cae6;
   border-radius: 15px;
+  text-decoration: none;
   &:hover {
     background-color: #0ba3b8;
     color: #000000;
@@ -128,4 +129,8 @@ h1 {
 
 .modal {
   font-family: "Nerko One", sans-serif;
+}
+
+.modal-header {
+  border-bottom: none;
 }
