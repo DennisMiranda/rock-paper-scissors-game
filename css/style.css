@@ -90,9 +90,9 @@ section {
     justify-content: space-between;
 }
 
-#btn-start {
-    width: 7%;
-    height: 30px;
+    #btn-start {
+   /* width: 7%;
+    height: 30px;*/
     background-color: var(--bg-btnhome-color);
     color: white;
     margin-bottom: 10%;
@@ -102,7 +102,7 @@ section {
 #btn-start:hover{
     background-color: #e60bc879;
 }
-
+*//
 #username1  {
     margin-bottom: 50px;
     text-align: center;
@@ -120,3 +120,44 @@ footer  {
 .spanTitle2 {
     color: var(--bg-title-color);
 }
+
+/* Estilos base para el botón */
+#btn-start {
+    padding: 10px 20px;
+    font-size: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ajustes para pantallas grandes */
+  @media (max-width: 1200px) {
+    #btn-start{
+      padding: 8px 16px;
+      font-size: 15px;
+    }
+  }
+  
+  /* Ajustes para pantallas medianas */
+  @media (max-width: 1024px) {
+    #btn-start{
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 600px) {
+    #btn-start{
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  
+  /* Ajustes para pantallas muy pequeñas */
+  @media (max-width: 400px) {
+    #btn-start {
+      padding: 5px 10px;
+      font-size: 10px;
+    }
+  }
+  
