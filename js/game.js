@@ -100,8 +100,9 @@ function showModal(message, imageUrl) {
 
   modalMessageElement.textContent = message;
   modalImageElement.src = imageUrl;
-
-  modal.show();
+  setTimeout(() => {
+    modal.show();
+  }, 1000);
 }
 
 // Restart game
