@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper & Scissor</title>
+    <title>Rock Paper & Scissors</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -13,20 +14,20 @@
 
 <body>
     <header>
-        <h1 class="display-1 fw-bolder text-uppercase ">Rock <span class="spanTitle1">- Paper</span> <span
-                class="spanTitle2"> & Scissor</span></h1>
+        <h1 class="fw-bolder text-uppercase mb-4">Rock <span class="spanTitle1">- Paper</span> <span class="spanTitle2">
+                & Scissors</span></h1>
     </header>
     <section>
-        <img src="/assets/rock-paper-scissor.png" alt="img-paperRockScissor">
-        <input type="text" id="username1" placeholder="Type your name">
+        <img class="img-fluid" src="/assets/rock-paper-scissor.png" alt="img-paperRockScissor">
+        <input class="form-control border-white shadow-none" type="text" id="username1" placeholder="Type your name">
         <span id="error-message" style="color: red; display: none;"></span>
-        <input type="text" id="username2" placeholder="Player 2">
 
-        <button id="btn-start" type="button">Start Game</button>
-        <button id="btn-vs" type="button">P1 vs P2</button>
+        <button class="btn fs-4" id="btn-start" type="button">Start Game</button>
 
     </section>
-    <footer>Created by Group X</footer>
+    <footer class="footer text-black text-center py-1 mt-1">
+        <p class="mb-0">Designed by Creative Coders.</p>
+    </footer>
 
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
