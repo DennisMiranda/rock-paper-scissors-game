@@ -1,163 +1,104 @@
-:root   {
-    --bg-home-color: #FFE15B;
-    --bg-btnhome-color: #EE3593;
-    --bg-title-color:#01CAE6;
+:root {
+  --bg-home-color: #ffe15b;
+  --bg-btnhome-color: #ee3593;
+  --bg-title-color: #01cae6;
 }
 
-html {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    min-width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--bg-home-color);
-    overflow: hidden;
-}
-
-
-#btn-vs, #username2 {
-    display: none;
+  min-width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-home-color);
+  overflow: hidden;
 }
 
 h1 {
-    padding-top: 8%;
-    padding-bottom: 0px;
-    text-align: center;
-    font-family: 'Luckiest Guy', Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    -webkit-text-stroke: 0.5px black;
-
+  font-size: clamp(4rem, 8vw, 15rem);
+  padding-top: 70px;
+  text-align: center;
+  font-family: "Luckiest Guy", Verdana, Tahoma, sans-serif;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
 }
 
-h1.display-1 {
-    font-size: 8em;
-    margin: 0;
-    line-height: 1.2;
-    animation: pulse 2s infinite ease-in-out; /* Animación de pulsación */
+h1 {
+  line-height: 1.2;
+  animation: pulse 2s infinite ease-in-out;
 }
-
-@keyframes pulse {
-        0% {
-        transform: scale(1);
-        opacity: 1;
-        }
-        50% {
-        transform: scale(1.05); /* Ligeramente más grande */
-        opacity: 0.8; /* Ligeramente transparente */
-        }
-        100% {
-        transform: scale(1);
-        opacity: 1;
-        }
-}
-
 .spanTitle1 {
-        animation: colorChange1 5s infinite alternate;
-    }
-    
-    .spanTitle2 {
-        animation: colorChange2 5s infinite alternate;
-    }
-    
-    @keyframes colorChange1 {
-        0% { color: #075f29; }
-        50% { color: #339699; } /* Un verde */
-        100% { color: #48c56d; }
-    }
-    
-    @keyframes colorChange2 {
-        0% { color: #dc35ce; }
-        50% { color: #88194d; } /* Un gris */
-        100% { color:  #EE3593; }
-}
-
-img {
-    width: 30%;
-    margin-bottom: 20px;
-}
-
-section {
-    padding-top: 0px;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-    #btn-start {
-   /* width: 7%;
-    height: 30px;*/
-    background-color: var(--bg-btnhome-color);
-    color: white;
-    margin-bottom: 10%;
-    border-radius: 10px;
-}
-
-#btn-start:hover{
-    background-color: #e60bc879;
-}
-*//
-#username1  {
-    margin-bottom: 50px;
-    text-align: center;
-    border-radius: 5px;
-}
-footer  {
-    text-align: center;
-    margin-bottom: 2%;
-}
-
-.spanTitle1 {
-    color: var(--bg-btnhome-color);
+  color: var(--bg-btnhome-color);
 }
 
 .spanTitle2 {
-    color: var(--bg-title-color);
+  color: var(--bg-title-color);
 }
 
-/* Estilos base para el botón */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+section {
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #btn-start {
-    padding: 10px 20px;
-    font-size: 16px;
-    max-width: 100%;
-    box-sizing: border-box;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Nerko One", sans-serif;
+  background-color: var(--bg-btnhome-color);
+  border-radius: 10px;
+  margin: 10px;
+  &:hover {
+    background-color: var(--bg-btnhome-color);
   }
-  
-  /* Ajustes para pantallas grandes */
-  @media (max-width: 1200px) {
-    #btn-start{
-      padding: 8px 16px;
-      font-size: 15px;
-    }
-  }
-  
-  /* Ajustes para pantallas medianas */
-  @media (max-width: 1024px) {
-    #btn-start{
-      padding: 8px 16px;
-      font-size: 14px;
-    }
-  }
-  
-  /* Ajustes para pantallas pequeñas */
-  @media (max-width: 600px) {
-    #btn-start{
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-  }
-  
-  /* Ajustes para pantallas muy pequeñas */
-  @media (max-width: 400px) {
-    #btn-start {
-      padding: 5px 10px;
-      font-size: 10px;
-    }
-  }
-  
+}
+
+#username1 {
+  margin-bottom: 50px;
+  text-align: center;
+  width: 200px;
+}
+
+.footer {
+  font-size: 10px;
+}
+
+.form-control {
+  font-family: "Nerko One", sans-serif;
+  font-size: 24px;
+}
+
+.form-control::placeholder {
+  font-family: "Nerko One", sans-serif;
+  font-size: 20px;
+  color: #b0b0b0d5;
+}
+
+#error-message {
+  font-family: "Nerko One", sans-serif;
+}

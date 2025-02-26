@@ -14,14 +14,14 @@ if (document.getElementById("btn-start")) {
     }
 
     if (username.length < 2 || username.length > 8) {
-      errorMessage.textContent = "El nombre debe tener entre 3 y 8 caracteres.";
+      errorMessage.textContent = "Enter a username between 3 and 8 characters.";
       errorMessage.style.display = "inline";
       return;
     }
 
     if (!/^[a-zA-Z\s]+$/.test(username)) {
       errorMessage.textContent =
-        "El nombre solo puede contener letras y espacios.";
+        "The name can only contain letters and spaces.";
       errorMessage.style.display = "inline";
       return;
     }
