@@ -9,13 +9,13 @@
     "type": "git",
     "url": "git+https://github.com/DennisMiranda/rock-paper-scissors-game.git"
   },
-  "author": "",
+  "author": "Creative Coders",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DennisMiranda/rock-paper-scissors-game/issues"
   },
   "homepage": "https://github.com/DennisMiranda/rock-paper-scissors-game#readme",
-  "description": "",
+  "description": "Its a game about Rock Paper and Scissors",
   "dependencies": {
     "bootstrap": "^5.3.3"
   }
