@@ -1,0 +1,136 @@
+:root {
+  --bg-home-color: #ffe15b;
+  --bg-btnhome-color: #e55d9d;
+  --bg-title-color: #01cae6;
+  --bg-dark-yellow: #f3c611;
+  --bg-medium-yellow: #fde94e;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-home-color);
+  box-sizing: border-box;
+}
+
+.inverted {
+  transform: scaleX(-1);
+}
+
+h1 {
+  font-family: "Luckiest Guy", sans-serif;
+  color: white;
+  .spanTitle1 {
+    color: var(--bg-btnhome-color);
+  }
+  .spanTitle2 {
+    color: var(--bg-title-color);
+  }
+}
+
+.game-develop {
+  font-family: "Nerko One", sans-serif;
+}
+
+.score-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-btnhome-color);
+  border-radius: 10px;
+  width: 220px;
+  padding: 0px 5px 0px 10px;
+}
+.img-choice {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.label-vs {
+  background-color: var(--bg-dark-yellow);
+  border-radius: 10px;
+  color: black;
+  width: 100px;
+}
+
+#result-message {
+  font-family: "Luckiest Guy", sans-serif;
+}
+
+.button-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+.button-rock {
+  background-color: var(--bg-medium-yellow);
+  &:hover {
+    background-color: var(--bg-dark-yellow);
+  }
+}
+
+.button-paper {
+  background-color: #6cd0d2;
+  &:hover {
+    background-color: #0ba3b8;
+  }
+}
+.button-scissors {
+  background-color: #dfbbd9;
+  &:hover {
+    background-color: var(--bg-btnhome-color);
+  }
+}
+
+#btn-home {
+  background-color: #01cae6;
+  border-radius: 15px;
+  text-decoration: none;
+  &:hover {
+    background-color: #0ba3b8;
+    color: #000000;
+  }
+}
+
+#btn-reset {
+  background-color: var(--bg-medium-yellow);
+  border-radius: 15px;
+}
+
+#btn-reset:hover {
+  background-color: var(--bg-medium-yellow);
+  &:hover {
+    background-color: var(--bg-dark-yellow);
+    color: #000000;
+  }
+}
+
+#computer-score,
+#player-score {
+  margin: 5px 0px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.footer {
+  font-size: 10px;
+}
+
+.modal {
+  font-family: "Nerko One", sans-serif;
+}
+
+.modal-header {
+  border-bottom: none;
+}

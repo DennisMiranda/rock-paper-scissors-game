@@ -4,58 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Rock Paper & Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
-<body class="bg-dark text-light text-center">
-    <nav class="navbar navbar-dark bg-secondary">
-        <div class="container">
-            <a class="navbar-brand mx-auto" href="#">Rock Paper Scissors</a>
-        </div>
-    </nav>
+<body>
+    <header>
+        <h1 class="fw-bolder text-uppercase mb-4">Rock <span class="spanTitle1">- Paper</span> <span class="spanTitle2">
+                & Scissors</span></h1>
+    </header>
+    <section>
+        <img class="img-fluid" src="/assets/rock-paper-scissor.png" alt="img-paperRockScissor">
+        <input class="form-control border-white shadow-none" type="text" id="username1" placeholder="Type your name">
+        <span id="error-message" style="color: red; display: none;"></span>
 
-    <main class="container mt-5">
-        <h1 class="mb-4">ROCK PAPER SCISSORS</h1>
+        <button class="btn fs-4" id="btn-start" type="button">Start Game</button>
 
-        <section class="row justify-content-center">
-            <div class="col-md-4 text-center">
-                <h3>PLAYER</h3>
-                <p id="player-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
-            </div>
-            <div class="col-md-2 d-flex flex-column justify-content-center ">
-                <h3>VS</h3>
-            </div>
-            <div class="col-md-4 text-center">
-                <h3>COMPUTER</h3>
-                <p id="computer-score" class="fs-2">0</p>
-                <img src="assets/rock.svg" alt="Player choice" id="player-image" class="img-fluid">
-            </div>
-        </section>
-
-        <p class="mt-2">Ready? Choose your move.</p>
-
-        <div class="d-flex justify-content-center gap-3">
-            <button class="btn btn-outline-light fs-1" id="rock">
-                <img src="assets/rock.svg" alt="Rock" width="50" height="50">
-            </button>
-            <button class="btn btn-outline-light fs-1" id="paper">
-                <img src="assets/paper.svg" alt="Paper" width="50" height="50">
-            </button>
-            <button class="btn btn-outline-light fs-1" id="scissors">
-                <img src="assets/scissors.svg" alt="Scissors" width="50" height="50">
-            </button>
-        </div>
-
-    </main>
-    <footer class="bg-secondary text-light text-center py-3 mt-3">
-        <p class="mb-0">Realizado por el Grupo-2-Nómada</p>
+    </section>
+    <footer class="footer text-black text-center py-1 mt-1">
+        <p class="mb-0">Designed by Creative Coders.</p>
     </footer>
 
-
-    <script src="js/index.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

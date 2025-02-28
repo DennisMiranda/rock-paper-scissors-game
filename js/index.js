@@ -1,55 +1,43 @@
-const Rock= 0;
-const Paper = 1;
-const Scissors= 2;
+// home //
+if (document.getElementById("btn-start")) {
+  const btnStart = document.getElementById("btn-start");
+  const usernameInput = document.getElementById("username1");
+  const errorMessage = document.getElementById("error-message");
 
-const Tie = 0;
-const Win = 1;
-const Lost = 2;
+  const validateAndRedirect = () => {
+    const username = usernameInput.value.trim();
 
-const rockBtn= document.getElementById("rock");
-const paperBtn= document.getElementById("paper");
-const scissorsBtn= document.getElementById("scissors");
-
-rockBtn.addEventListener("click",() =>{
-    play(Rock);
-});
-paperBtn.addEventListener("click",() =>{
-    play(Paper);
-});
-scissorsBtn.addEventListener("click",() =>{
-    play(Scissors);
-});
-function play(userOption){
-    const machineOption= Math.floor(Math.random() * 3);
-    const result= calcResultado(userOption,machineOption);
-
-        switch(result){
-            case Tie: 
-            alert(machineOption + "Tie");
-            break;
-            case Win: 
-            alert(machineOption + "Win");
-            break;
-            case Lost: 
-            alert(machineOption + "Lost");
-            break;
-        }
-}
-function calcResultado(userOption, machineOption){
-    if (userOption=== machineOption){
-        return Tie;
-
-    }else  if (userOption=== Rock) {
-        if (machineOption=== Paper) return Lost;
-        if (machineOption=== Scissors) return Win;
-    }
-    else  if (userOption=== Paper) {
-        if (machineOption===Scissors) return Lost;
-        if (machineOption=== Rock) return Win;
-    
-    }else  if (userOption=== Scissors){
-        if (machineOption===Rock ) return Lost;
-        if (machineOption=== Paper) return Win;
+    if (username === "") {
+      errorMessage.textContent = "Please enter your name";
+      errorMessage.style.display = "inline";
+      return;
     }
 
+    if (username.length < 2 || username.length > 8) {
+      errorMessage.textContent = "Enter a username between 3 and 8 characters.";
+      errorMessage.style.display = "inline";
+      return;
+    }
+
+    if (!/^[a-zA-Z\s]+$/.test(username)) {
+      errorMessage.textContent =
+        "The name can only contain letters and spaces.";
+      errorMessage.style.display = "inline";
+      return;
+    }
+
+    errorMessage.style.display = "none";
+
+    window.location.href = `./pages/game.html?userName=${encodeURIComponent(
+      username
+    )}`;
+  };
+
+  btnStart.addEventListener("click", validateAndRedirect);
+
+  usernameInput.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      validateAndRedirect();
+    }
+  });
 }

@@ -1,10 +1,104 @@
-hmtl,
+:root {
+  --bg-home-color: #ffe15b;
+  --bg-btnhome-color: #ee3593;
+  --bg-title-color: #01cae6;
+}
+
+html,
 body {
   height: 100%;
 }
 
 body {
+  min-width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--bg-home-color);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: clamp(4rem, 8vw, 15rem);
+  padding-top: 70px;
+  text-align: center;
+  font-family: "Luckiest Guy", Verdana, Tahoma, sans-serif;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+}
+
+h1 {
+  line-height: 1.2;
+  animation: pulse 2s infinite ease-in-out;
+}
+.spanTitle1 {
+  color: var(--bg-btnhome-color);
+}
+
+.spanTitle2 {
+  color: var(--bg-title-color);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+section {
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#btn-start {
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Nerko One", sans-serif;
+  background-color: var(--bg-btnhome-color);
+  border-radius: 10px;
+  margin: 10px;
+  &:hover {
+    background-color: var(--bg-btnhome-color);
+  }
+}
+
+#username1 {
+  margin-bottom: 50px;
+  text-align: center;
+  width: 200px;
+}
+
+.footer {
+  font-size: 10px;
+}
+
+.form-control {
+  font-family: "Nerko One", sans-serif;
+  font-size: 24px;
+}
+
+.form-control::placeholder {
+  font-family: "Nerko One", sans-serif;
+  font-size: 20px;
+  color: #b0b0b0d5;
+}
+
+#error-message {
+  font-family: "Nerko One", sans-serif;
 }
